@@ -72,8 +72,10 @@ Pliki programistyczne biblioteki do przetwarzania informacji DWARF.
 %build
 %cmake \
 	-D__LIB=%{_lib} \
+	-DCMAKE_BUILD_TYPE="None" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_BUILD_TYPE="MinSizeRel" .
+	-DCMAKE_VERBOSE_MAKEFILE=1 \
+	.
 %{__make}
 
 %install
@@ -81,6 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+chmod 755 $RPM_BUILD_ROOT%{_libdir}/lib*.so*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
