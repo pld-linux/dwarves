@@ -5,9 +5,9 @@ Version:	1.0
 Release:	1
 License:	GPL v2
 Group:		Development/Tools
-URL:		http://oops.ghostprotocols.net:81/blog
 Source0:	http://userweb.kernel.org/~acme/%{name}-%{version}.tar.bz2
 # Source0-md5:	d23bbf3a7fd6f084883c1071dd921267
+URL:		http://oops.ghostprotocols.net:81/blog
 BuildRequires:	cmake
 BuildRequires:	elfutils-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
