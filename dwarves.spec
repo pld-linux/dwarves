@@ -74,7 +74,7 @@ Pliki programistyczne biblioteki do przetwarzania informacji DWARF.
 	-D__LIB=%{_lib} \
 	-DCMAKE_BUILD_TYPE="None" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_VERBOSE_MAKEFILE=1 \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
 	.
 %{__make}
 
