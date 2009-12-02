@@ -10,6 +10,7 @@ Source0:	http://userweb.kernel.org/~acme/%{name}-%{version}.tar.bz2
 URL:		http://oops.ghostprotocols.net:81/blog
 BuildRequires:	cmake
 BuildRequires:	elfutils-devel
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.293
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,6 +76,8 @@ Pliki programistyczne biblioteki do przetwarzania informacji DWARF.
 	-DCMAKE_BUILD_TYPE="None" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	-DCMAKE_CXX_COMPILER_WORKS=1 \
+	-DCMAKE_CXX_COMPILER="%{__cc}" \
 	.
 %{__make}
 
